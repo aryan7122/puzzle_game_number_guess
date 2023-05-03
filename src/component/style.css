@@ -1,0 +1,138 @@
+.emogy {
+    /* border: 1px solid rgb(0, 0, 0); */
+    box-shadow: 0px 0px 20px 3px black;
+    padding: 0px;
+}
+
+.emogy .rendomimg span::selection {
+    background: none;
+}
+
+/* input{
+    width: 30px;
+    height: 20px;
+} */
+.emogy .rendomimg {
+    box-shadow: inset 1px 1px 15px 0.5px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.emogy .rendomimg span {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.ans {
+    color: rgb(33, 248, 0);
+    font-weight: 700;
+}
+
+.qes {
+    color: red;
+    font-weight: 700;
+}
+
+.btn_update {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    /* border: 1px solid rgb(0, 0, 0); */
+
+}
+
+.btn_update button {
+    font-size: 1.3rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: rgba(0, 0, 0, 0.576);
+    color: white;
+    padding: 10px;
+    box-shadow: 0px 0px 4px 2px black;
+    font-weight: 600;
+}
+
+.chackown {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 85%;
+}
+
+.chackown input {
+    width: 40%;
+    box-shadow: inset 2px px 4px 2px rgba(3, 3, 3, 0.845);
+}
+
+
+.chackown input:active {
+    box-shadow: inset 1px 1px 2px 1px rgba(3, 3, 3, 0.845);
+}
+
+.chackown input:hover {
+    box-shadow: 0px 0px 8px 5px rgba(3, 3, 3, 0.938);
+}
+
+.chackown button,
+input {
+    font-size: 1.3rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: rgba(0, 0, 0, 0.576);
+    color: white;
+    padding: 10px;
+    box-shadow: 0px 0px 4px 2px black;
+    font-weight: 600;
+}
+
+button:hover {
+    box-shadow: 0px 0px 8px 5px rgba(3, 3, 3, 0.938);
+}
+
+button:active {
+    box-shadow:  1px 1px 4px 2px rgba(0, 0, 0, 0.845);
+}
+button{
+        cursor: pointer;
+}
+
+.hintans{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+    font-size: 8rem;
+    width: 100%;
+    height: 100%;
+    margin-left: -36%;
+    margin-top: -5%;
+    padding: 0;
+    z-index: 1;
+    background: rgba(128, 128, 128, 0.141);
+}
+.hintans h1{
+    box-shadow: 0px 0px 2px 2px black;
+    border-radius: 50%;
+    width:300px;
+    height: 300px;
+    background: black;
+}
+
+.close{
+    display: none;
+}
