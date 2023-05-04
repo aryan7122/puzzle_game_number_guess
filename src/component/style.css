@@ -142,5 +142,5 @@ button{
     text-shadow: 1px 1px 10px black;
     font-weight: 600;
     color: rgb(176, 176, 176);
-    margin-left: -30%;
+    /* margin-left: -30%; */
 }
