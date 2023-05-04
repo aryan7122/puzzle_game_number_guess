@@ -1,10 +1,14 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import './style.css'
 
 
 
 const Assets = () => {
     let pic = ['🎮', '🔊', '⚙️', '😍', '😴', '🤑', '💀', '👻', '👽', '🐭', '🐸', '🐢', '🐬', '🧟', '🥷', '🎈', '🎉', '😷', '🕸️', '🎯', '🔒', '🔑', '🧲', '☎️', '🏧', '⏰', '🧭', '🏚️', '☢️', '📵', '🚓']
+
+    const [reset, setReset] = useState(null);
+    const [nm, setNm] = useState('❓');
+
 
     // Generate a random number between 1 and 30
     let randomNumber = Math.floor(Math.random() * 30) + 1;
@@ -29,10 +33,26 @@ const Assets = () => {
         }, 5000);
     }
 
-    let  clas=  document.getElementsByClassName('again')[0]
-    function next(e) {
-            clas.classList.add('x')
+    function next() {
+        setReset('reset')
+        setNm('❓')
+        setTimeout(() => {
+            setReset(null)
+        }, 400);
+        setTimeout(() => {
+            setReset('reset')
+        }, 500);
+        setTimeout(() => {
+            setReset(null)
+        }, 800);
         // window.location.reload();
+        setTimeout(() => {
+            setReset('reset')
+        }, 1300);
+        setTimeout(() => {
+            setReset(null)
+        }, 1600);
+        setReset(reset)
     }
 
     let submitans;
@@ -42,13 +62,14 @@ const Assets = () => {
     }
     function submitanser() {
         // { (sum6 === submitans) ? alert("Right Answer") : alert('Worng Answer') }
-        if (sum5 === submitans.toString()) {
+        if (sum6 == submitans) {
+            setNm(submitans)
             alert('Right Answer ')
         } else {
+            setNm('❓');
             alert('Wrong Answer')
         }
     }
-
 
     return (
         <div>
@@ -74,7 +95,7 @@ const Assets = () => {
 
             <div className='btn_update '>
                 <button onClick={answeris} >Hint</button> <span className='show ' ref={refs} >{sum6}</span>
-                <button onClick={next}className='again ' >Play again</button>
+                <button onClick={next} className='again' >Play again</button>
             </div>
 
             <div className='emogy'>
@@ -135,16 +156,16 @@ const Assets = () => {
                     <span className='add'>+</span>
                     <span className='sp'>{pic[randomNumber2]}</span>
                     <span className='eq'>=</span>
-                    <span className='qes'>...?</span>
+                    <span className='qes'>{ nm }</span>
                 </div>
             </div>
             <div className='chackown'>
-                <input type='number' onChange={valu} autoFocus/>
+                <input type='number' onChange={valu} autoFocus />
                 <button onClick={submitanser}>Submit Answer</button>
             </div>
 
-            
-           
+
+
         </div>
     )
 }
