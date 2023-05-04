@@ -7,7 +7,6 @@ const Assets = () => {
     let pic = ['🎮', '🔊', '⚙️', '😍', '😴', '🤑', '💀', '👻', '👽', '🐭', '🐸', '🐢', '🐬', '🧟', '🥷', '🎈', '🎉', '😷', '🕸️', '🎯', '🔒', '🔑', '🧲', '☎️', '🏧', '⏰', '🧭', '🏚️', '☢️', '📵', '🚓']
 
     const [reset, setReset] = useState(null);
-    const [nm, setNm] = useState('❓');
 
 
     // Generate a random number between 1 and 30
@@ -35,7 +34,6 @@ const Assets = () => {
 
     function next() {
         setReset('reset')
-        setNm('❓')
         setTimeout(() => {
             setReset(null)
         }, 400);
@@ -58,15 +56,13 @@ const Assets = () => {
     let submitans;
     function valu(e) {
         submitans = e.target.value;
-        // alert(submitans)
     }
     function submitanser() {
         // { (sum6 === submitans) ? alert("Right Answer") : alert('Worng Answer') }
         if (sum6 == submitans) {
-            setNm(submitans)
             alert('Right Answer ')
         } else {
-            setNm('❓');
+         
             alert('Wrong Answer')
         }
     }
@@ -156,7 +152,7 @@ const Assets = () => {
                     <span className='add'>+</span>
                     <span className='sp'>{pic[randomNumber2]}</span>
                     <span className='eq'>=</span>
-                    <span className='qes'>{ nm }</span>
+                    <span className='qes'>❓</span>
                 </div>
             </div>
             <div className='chackown'>
