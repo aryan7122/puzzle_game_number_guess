@@ -1,8 +1,6 @@
 import React, { useRef, useState } from 'react'
 import './style.css'
 
-
-
 const Assets = () => {
     let pic = ['🎮', '🔊', '⚙️', '😍', '😴', '🤑', '💀', '👻', '👽', '🐭', '🐸', '🐢', '🐬', '🧟', '🥷', '🎈', '🎉', '😷', '🕸️', '🎯', '🔒', '🔑', '🧲', '☎️', '🏧', '⏰', '🧭', '🏚️', '☢️', '📵', '🚓']
 
@@ -24,6 +22,9 @@ const Assets = () => {
     let sum6 = randomNumber5 + randomNumber4 + randomNumber2;
 
     const refs = useRef(null);
+    const ansshow = useRef(null);
+    const ansshow2 = useRef(null);
+
     function answeris(e) {
         // alert(sum6)
         refs.current.style.display = 'block'
@@ -55,18 +56,23 @@ const Assets = () => {
 
     let submitans;
     function valu(e) {
-        submitans = e.target.value;
+        submitans = parseInt(e.target.value);
     }
     function submitanser() {
-        // { (sum6 === submitans) ? alert("Right Answer") : alert('Worng Answer') }
-        if (sum6 == submitans) {
-            alert('Right Answer ')
-        } else {
-         
-            alert('Wrong Answer')
+        if (sum6 === submitans) {
+            // alert('Right Answer ')
+            ansshow.current.style.display = 'block'
+            setTimeout(() => {
+                ansshow.current.style.display = 'none'
+            }, 10000);
+        } else {      
+            ansshow2.current.style.display = 'block'
+            setTimeout(() => {
+                ansshow2.current.style.display = 'none'
+            }, 5000);
+            // alert('Wrong Answer')
         }
     }
-
     return (
         <div>
 
@@ -88,7 +94,10 @@ const Assets = () => {
                     <h4>x</h4>
                 </div> */}
             </div>
-
+            <div>
+                <span className='show ' ref={ansshow} >Right Answer</span>
+                <span className='show ' ref={ansshow2} >Wrong Answer</span>
+            </div>
             <div className='btn_update '>
                 <button onClick={answeris} >Hint</button> <span className='show ' ref={refs} >{sum6}</span>
                 <button onClick={next} className='again' >Play again</button>
