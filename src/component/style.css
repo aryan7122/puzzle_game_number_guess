@@ -1,7 +1,8 @@
 .emogy {
-    /* border: 1px solid rgb(0, 0, 0); */
+    border: 0.4px solid rgb(0, 0, 0);
     box-shadow: 0px 0px 20px 3px black;
     padding: 0px;
+    width: 90%;
 }
 
 .emogy .rendomimg span::selection {
@@ -16,16 +17,16 @@
     box-shadow: inset 1px 1px 15px 0.5px black;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     padding: 5px;
 }
 
 .emogy .rendomimg span {
-    padding: 5px;
+    padding: 3px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin: 5px;
     cursor: pointer;
 }
@@ -73,7 +74,7 @@
 }
 
 .chackown input {
-    width: 40%;
+    width: 30%;
     box-shadow: inset 2px px 4px 2px rgba(3, 3, 3, 0.845);
 }
 
@@ -140,7 +141,7 @@ button{
 .show{
     display: none;
     font-size: 2.2rem;    
-    text-shadow: 4px 5px 4px black;
+    text-shadow: 1px 1px 10px black;
     font-weight: 600;
     color: rgb(176, 176, 176);
     margin-left: -30%;

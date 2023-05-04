@@ -29,8 +29,10 @@ const Assets = () => {
         }, 5000);
     }
 
-    function next() {
-        window.location.reload();
+    let  clas=  document.getElementsByClassName('again')[0]
+    function next(e) {
+            clas.classList.add('x')
+        // window.location.reload();
     }
 
     let submitans;
@@ -70,9 +72,9 @@ const Assets = () => {
                 </div> */}
             </div>
 
-            <div className='btn_update'>
+            <div className='btn_update '>
                 <button onClick={answeris} >Hint</button> <span className='show ' ref={refs} >{sum6}</span>
-                <button onClick={next} >Play again</button>
+                <button onClick={next}className='again ' >Play again</button>
             </div>
 
             <div className='emogy'>
@@ -137,7 +139,7 @@ const Assets = () => {
                 </div>
             </div>
             <div className='chackown'>
-                <input type='text' onChange={valu} autoFocus/>
+                <input type='number' onChange={valu} autoFocus/>
                 <button onClick={submitanser}>Submit Answer</button>
             </div>
 
