@@ -136,3 +136,12 @@ button{
 .close{
     display: none;
 }
+
+.show{
+    display: none;
+    font-size: 2.2rem;    
+    text-shadow: 4px 5px 4px black;
+    font-weight: 600;
+    color: rgb(176, 176, 176);
+    margin-left: -30%;
+}

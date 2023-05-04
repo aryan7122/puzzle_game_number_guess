@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './style.css'
+
 
 
 const Assets = () => {
@@ -19,26 +20,31 @@ const Assets = () => {
     let sum5 = randomNumber3 + randomNumber4 + randomNumber5;
     let sum6 = randomNumber5 + randomNumber4 + randomNumber2;
 
-    function answeris() {
-        alert(sum6)
+    const refs = useRef(null);
+    function answeris(e) {
+        // alert(sum6)
+        refs.current.style.display = 'block'
+        setTimeout(() => {
+            refs.current.style.display = 'none'
+        }, 5000);
     }
 
     function next() {
         window.location.reload();
     }
 
-    let submitans = '';
+    let submitans;
     function valu(e) {
         submitans = e.target.value;
         // alert(submitans)
     }
     function submitanser() {
-        { (sum6 == submitans) ? alert("Right Answer") : alert('Worng Answer') }
-        // if (sum5 === submitans.toString()) {
-        //     alert('good anser ')
-        // } else {
-        //     alert('this is  not good anser')
-        // }
+        // { (sum6 === submitans) ? alert("Right Answer") : alert('Worng Answer') }
+        if (sum5 === submitans.toString()) {
+            alert('Right Answer ')
+        } else {
+            alert('Wrong Answer')
+        }
     }
 
 
@@ -65,7 +71,7 @@ const Assets = () => {
             </div>
 
             <div className='btn_update'>
-                <button onClick={answeris} >Hint</button>
+                <button onClick={answeris} >Hint</button> <span className='show ' ref={refs} >{sum6}</span>
                 <button onClick={next} >Play again</button>
             </div>
 
