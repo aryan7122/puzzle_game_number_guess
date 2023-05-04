@@ -1,8 +1,6 @@
 .emogy {
     border: 0.4px solid rgb(0, 0, 0);
     box-shadow: 0px 0px 20px 3px black;
-    padding: 0px;
-    width: 90%;
 }
 
 .emogy .rendomimg span::selection {
@@ -22,7 +20,7 @@
 }
 
 .emogy .rendomimg span {
-    padding: 3px;
+    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
