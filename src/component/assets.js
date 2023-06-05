@@ -5,6 +5,9 @@ const Assets = () => {
     let pic = ['🎮', '🔊', '⚙️', '😍', '😴', '🤑', '💀', '👻', '👽', '🐭', '🐸', '🐢', '🐬', '🧟', '🥷', '🎈', '🎉', '😷', '🕸️', '🎯', '🔒', '🔑', '🧲', '☎️', '🏧', '⏰', '🧭', '🏚️', '☢️', '📵', '🚓']
 
     const [reset, setReset] = useState(null);
+    const [res, setRes] = useState(null);
+
+
 
 
     // Generate a random number between 1 and 30
@@ -34,6 +37,7 @@ const Assets = () => {
     }
 
     function next() {
+        setRes(null)
         setReset('reset')
         setTimeout(() => {
             setReset(null)
@@ -57,22 +61,27 @@ const Assets = () => {
     let submitans;
     function valu(e) {
         submitans = parseInt(e.target.value);
+        // alert(submitans)
     }
+
     function submitanser() {
+        setRes(null)
         if (sum6 === submitans) {
             // alert('Right Answer ')
+            console.log(submitans)
             ansshow.current.style.display = 'block'
+            setRes(submitans);
             setTimeout(() => {
                 ansshow.current.style.display = 'none'
-            }, 10000);
-        } else {      
+            }, 2000);
+        } else {
             ansshow2.current.style.display = 'block'
             setTimeout(() => {
                 ansshow2.current.style.display = 'none'
-            }, 5000);
-            // alert('Wrong Answer')
+            }, 1000);
         }
     }
+    console.log("res", res)
     return (
         <div>
 
@@ -95,8 +104,9 @@ const Assets = () => {
                 </div> */}
             </div>
             <div>
-                <span className='show ' ref={ansshow} >Right Answer</span>
-                <span className='show ' ref={ansshow2} >Wrong Answer</span>
+
+                <span className='show an ' ref={ansshow} >Right Answer</span>
+                <span className='show an' ref={ansshow2} >Wrong Answer</span>
             </div>
             <div className='btn_update '>
                 <button onClick={answeris} >Hint</button> <span className='show ' ref={refs} >{sum6}</span>
@@ -161,7 +171,7 @@ const Assets = () => {
                     <span className='add'>+</span>
                     <span className='sp'>{pic[randomNumber2]}</span>
                     <span className='eq'>=</span>
-                    <span className='qes'>❓</span>
+                    <span className='qes'> {res ? res : '❓'}</span>
                 </div>
             </div>
             <div className='chackown'>
